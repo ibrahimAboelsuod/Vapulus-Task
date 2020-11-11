@@ -1,7 +1,32 @@
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import '~@angular/material/theming';
-@import 'theming/palette';
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+@import "theming/palette";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+mat-form-field {
+  .fas {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .mat-form-field-prefix {
+    top: 0rem !important;
+  }
+}

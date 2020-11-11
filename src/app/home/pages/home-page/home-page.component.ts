@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@app/auth/services/auth/auth.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public logout(): void {
+    this.authService.logout();
+    this.router.navigate(['auth/login']);
   }
-
 }

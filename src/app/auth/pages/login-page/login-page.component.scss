@@ -1,0 +1,74 @@
+@import "~@angular/material/theming";
+@import "palette";
+
+:host {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+  overflow: hidden;
+  flex-grow: 0;
+
+  .half-page {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-container {
+    background-color: mat-color($primary);
+    min-width: 300px;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .login-form {
+    background-color: #ffffff;
+    padding: 4rem;
+    width: 60%;
+    min-width: 280px;
+
+    @media screen and (max-width: 992px) {
+      padding: 2rem 1.5rem;
+    }
+
+    &__logo {
+      width: 110px;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 2.5rem;
+      margin-bottom: 0;
+    }
+
+    &__sub-title {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    mat-form-field,
+    .login-btn {
+      width: 100%;
+    }
+
+    button {
+      height: 40px;
+    }
+
+    .forgot-btn {
+      margin-top: 2rem;
+    }
+
+    .signup-btn,
+    .forgot-btn {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

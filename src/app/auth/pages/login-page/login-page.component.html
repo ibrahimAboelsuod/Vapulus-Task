@@ -1,1 +1,67 @@
-<p>login-page works!</p>
+<!-- Should create an auth layout and move this to it later -->
+<div class="half-page image-container"
+     @imageContainer>
+  <img src="assets/login-side-image.png">
+</div>
+<div class="half-page login-container"
+     @loginContainer>
+
+  <div class="login-form">
+    <img class="login-form__logo"
+         src="assets/login-logo.png">
+    <h1 class="login-form__title">
+      Sign In
+    </h1>
+    <small class="login-form__sub-title">
+      Access the "BizBo" using username and password
+    </small>
+
+    <form [formGroup]="loginForm"
+          (submit)="submitLogin()">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <span matPrefix>
+          <i class="fas fa-user"></i>
+        </span>
+        <input type="email"
+               formControlName="username"
+               matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <span matPrefix>
+          <i class="fas fa-unlock-alt"></i>
+        </span>
+        <input type="password"
+               formControlName="password"
+               matInput>
+      </mat-form-field>
+
+      <button mat-flat-button
+              color="primary"
+              class="login-btn">
+        Log in
+      </button>
+    </form>
+
+
+    <button mat-button
+            color="primary"
+            type="button"
+            class="forgot-btn">
+      Forgot Password?
+    </button>
+
+    <div>
+      Don't have an account?
+      <button mat-button
+              color="primary"
+              type="button"
+              class="signup-btn">
+        Sign Up
+      </button>
+    </div>
+  </div>
+
+</div>

@@ -1,10 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
-const sharedModules = [CommonModule];
+const sharedModules = [CommonModule, FormsModule, ReactiveFormsModule];
 @NgModule({
   declarations: [],
   imports: [...sharedModules],
   exports: [...sharedModules],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: {
+        appearance: 'outline',
+      },
+    },
+  ],
 })
 export class SharedModule {}
